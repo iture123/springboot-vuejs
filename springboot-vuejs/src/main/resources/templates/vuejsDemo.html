@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" 
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+  <meta charset="UTF-8"/>
+  <!-- import CSS -->
+  
+      <link th:href="@{/js/element/element-ui.css}" rel="stylesheet"/>
+</head>
+<body>
+  <div id="app">
+    <template>
+    <el-table
+      :data="tableData"
+      style="width: 100%">
+           <el-table-column
+      type="index"
+      width="50">
+    </el-table-column>
+      <el-table-column
+        prop="ip"
+        label="ip"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        label="名称"
+        width="180">
+      </el-table-column>
+
+      </el-table-column>
+    </el-table>
+  </template>
+  </div>
+</body>
+<script th:inline="javascript"></script>
+  <script th:src="@{/js/axios.min.js}"></script>
+   <script th:src="@{/js/vue.js}"></script>
+    <script type="text/javascript" th:src="@{/js/element/element-ui.js}"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+          tableData: [{"ip":"127.0.0.1","name":"localhost"}]
+      }
+	   
+    }) 
+    
+  </script>
+</html>
